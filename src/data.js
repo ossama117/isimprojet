@@ -208,7 +208,7 @@ export const emplois = [
     url: "http://e-planner-isim.somee.com/accueil_grp.aspx?grp=EAE101",
   },
   {
-    filiere: "EAE101",
+    filiere: "EAE",
     groupe: "EAE102",
     url: "http://e-planner-isim.somee.com/accueil_grp.aspx?grp=EAE102",
   },

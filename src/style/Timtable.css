@@ -20,3 +20,15 @@
   background-color: #04AA6D;
   color: white;
 }
+select {
+  padding: 8px;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+select option {
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+
+}

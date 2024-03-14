@@ -26,13 +26,13 @@ export default function Navbar() {
         <Link to="/" className="a">
           Accueil
         </Link>
-        <Link to="presentation" className="a">
+        <Link to="/presentation" className="a">
           Présentation
         </Link>
         <Link to="/timetable" className="a">
           Emploi
         </Link>
-        <Link to="stagaire" className="a">
+        <Link to="/login" className="a">
           Stagiaire
         </Link>
         <Link to="/services" className="a">

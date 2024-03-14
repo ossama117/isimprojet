@@ -3,26 +3,46 @@ import "../style/Timtable.css";
 import { emplois } from "../data";
 
 function Timetable() {
-  const [selectedGroup, setSelectedGroup] = useState("");
+  const [selectedFiliere, setSelectedFiliere] = useState("");
+  const [namegroupe, setNamegroupe] = useState("");
 
-  const handleGroupChange = (event) => {
-    setSelectedGroup(event.target.value);
+  const handleFiliereChange = (event) => {
+    setSelectedFiliere(event.target.value);
   };
 
-  const filteredEmplois = selectedGroup
-    ? emplois.filter((emploi) => emploi.groupe === selectedGroup)
-    : emplois;
+  const handleGroupChange = (event) => {
+
+    setNamegroupe(event.target.value.toUpperCase());
+  };
+
+  const filteredEmplois = emplois.filter((emploi) => {
+    if (selectedFiliere && emploi.filiere !== selectedFiliere) {
+      return false;
+    }
+    if (namegroupe && emploi.groupe.indexOf(namegroupe) === -1) {
+      return false;
+    }
+    return true;
+  });
+
+  const FiliereValues = [...new Set(emplois.map((item) => item.filiere))];
 
   return (
     <div>
-      <select onChange={handleGroupChange} value={selectedGroup}>
-        <option value="">tout les Groupes</option>
-              {emplois.map((groupe) => (
-          <option key={groupe.groupe} value={groupe.groupe}>
-            {groupe.groupe}
+      <select onChange={handleFiliereChange} value={selectedFiliere}>
+        <option value="">Toutes les Filieres</option>
+        {FiliereValues.map((filiere) => (
+          <option key={filiere} value={filiere}>
+            {filiere}
           </option>
         ))}
       </select>
+      <input
+        type="text"
+        placeholder="Recherche par groupe"
+        value={namegroupe}
+        onChange={handleGroupChange}
+      />
       <table id="customers">
         <thead>
           <tr>
@@ -37,7 +57,11 @@ function Timetable() {
               <td>{emploi.filiere}</td>
               <td>{emploi.groupe}</td>
               <td>
-                <a href={emploi.url} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={emploi.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Cliquez ici pour voir les horaires
                 </a>
               </td>

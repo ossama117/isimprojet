@@ -9,6 +9,7 @@ import Presentation from "./components/Presentation";
 import Services from "./components/Services";
 import Stagiaire from "./components/Stagiaire";
 import Footer from "./components/Footer";
+import Login from "./components/Login";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
             <Route path="/presentation" element={<Presentation />} />
             <Route path="/timetable" element={<Timetable />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/stagaire" element={<Stagiaire />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </BrowserRouter>
           <Footer/>

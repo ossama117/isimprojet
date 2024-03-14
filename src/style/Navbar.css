@@ -71,6 +71,7 @@ body{
     .navbar {
         display: flex;
         flex-direction: column;
+        width: 150%;
         /* height: 300px; */
     }
 
@@ -82,7 +83,7 @@ body{
     }
 
     .toggle-btn {
-        margin-right: 60px;
+        margin-right: 220px;
         display: flex;
         flex-direction: column;
         cursor: pointer;
